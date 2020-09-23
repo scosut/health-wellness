@@ -1,0 +1,8 @@
+/node_modules
+/wp-admin
+/wp-includes
+/*.php
+/*.html
+license.txt
+package-lock.json
+web.config

@@ -1,0 +1,1312 @@
+/*
+	Theme Name: Valley Vitality
+	Author:     Scott Sutton
+	Version:    1.0
+*/
+/* reset styling */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+/* base styling */
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: normal;
+}
+
+h1 {
+  color: #548235;
+  font-size: 3rem;
+}
+
+h2 {
+  color: rgba(84, 130, 53, 0.7);
+  font-size: 2.5rem;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+em {
+  color: #40910a;
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: normal;
+  font-size: 1.7rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 140rem;
+}
+
+.menu-hidden {
+  display: none;
+}
+
+.menu-visible {
+  display: block;
+}
+
+.button {
+  background: #548235;
+  color: #fff;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: inherit;
+  font-weight: normal;
+  margin-top: 2rem;
+  padding: 0.5rem 0.7rem;
+}
+
+#wpadminbar {
+  left: 50%;
+  max-width: 140rem;
+  position: fixed;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@-webkit-keyframes circle {
+  0% {
+    opacity: 1;
+    width: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 105%;
+  }
+}
+
+@keyframes circle {
+  0% {
+    opacity: 1;
+    width: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 105%;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  40% {
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  40% {
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes jumpUp {
+  from {
+    top: 53%;
+  }
+  to {
+    top: 38%;
+  }
+}
+
+@keyframes jumpUp {
+  from {
+    top: 53%;
+  }
+  to {
+    top: 38%;
+  }
+}
+
+@-webkit-keyframes pulse-marker {
+  0% {
+    background-image: url("/img/marker.png");
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    background-image: url("/img/marker_glow.png");
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    background-image: url("/img/marker.png");
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse-marker {
+  0% {
+    background-image: url("/img/marker.png");
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    background-image: url("/img/marker_glow.png");
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
+  }
+  100% {
+    background-image: url("/img/marker.png");
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes health-strategies-glow {
+  0% {
+    background-image: url("/img/health_strategies.png");
+  }
+  50% {
+    background-image: url("/img/health_strategies_glow.png");
+  }
+  100% {
+    background-image: url("/img/health_strategies.png");
+  }
+}
+
+@keyframes health-strategies-glow {
+  0% {
+    background-image: url("/img/health_strategies.png");
+  }
+  50% {
+    background-image: url("/img/health_strategies_glow.png");
+  }
+  100% {
+    background-image: url("/img/health_strategies.png");
+  }
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 2s forwards;
+          animation: fadeIn 2s forwards;
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 2s forwards;
+          animation: fadeOut 2s forwards;
+}
+
+.fadeOutImmediate {
+  -webkit-animation: fadeOut 0s forwards;
+          animation: fadeOut 0s forwards;
+}
+
+.jumpUp {
+  -webkit-animation: fadeIn 2s forwards, jumpUp 2s forwards;
+          animation: fadeIn 2s forwards, jumpUp 2s forwards;
+}
+
+.pulse-marker {
+  -webkit-animation: pulse-marker 2s infinite;
+          animation: pulse-marker 2s infinite;
+}
+
+/* header styling */
+#header {
+  background-image: url("/img/header_text_small.png"), url("/img/header_no_text.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center 73%, 20% 5%;
+  background-size: 28rem, cover;
+  font-family: "Roboto Condensed", sans-serif;
+  height: 48.8rem;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  width: 100%;
+}
+
+@media print, screen and (min-width: 501px) {
+  #header {
+    background-image: url("/img/header_text.png"), url("/img/header_no_text.jpg");
+    background-position: 15% 71%, 20% 5%;
+    background-size: 45rem, cover;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #header {
+    background-position: 15% 69%, 20% 5%;
+    background-size: 53.8rem, cover;
+  }
+}
+
+@media print, screen and (min-width: 1201px) {
+  #header {
+    background-position: 15% 56%, top center;
+    background-size: 53.8rem, contain;
+  }
+}
+
+/* navigation styling */
+#nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+#nav:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), url(/img/barnwood.jpg) no-repeat center/cover;
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/img/barnwood.jpg) no-repeat center/cover;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/img/barnwood.jpg) no-repeat center/cover;
+  content: '';
+  display: block;
+  height: 100%;
+  opacity: 0.9;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+#nav #hamburger {
+  background: rgba(255, 255, 255, 0.8);
+  border: 0.1rem solid #999;
+  border-radius: 0.3rem;
+  color: #999;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 0.3rem;
+  padding: 0.5rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.1rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  text-align: center;
+}
+
+#nav #hamburger.exit {
+  background: none;
+  border: 0.1rem solid transparent;
+}
+
+#nav .parent-menu {
+  border: 0.1rem solid rgba(136, 136, 136, 0.3);
+  border-radius: 0.2rem;
+  list-style: none;
+}
+
+#nav .parent-menu .parent-menu-item {
+  border-bottom: 0.1rem solid rgba(136, 136, 136, 0.3);
+}
+
+#nav .parent-menu .parent-menu-item:last-child {
+  border-bottom: none;
+  margin-right: 0;
+}
+
+#nav .parent-menu .parent-menu-item.has-children i {
+  color: #999;
+  float: right;
+  padding-right: 0.5rem;
+}
+
+#nav .parent-menu .parent-menu-item .parent-menu-item-link {
+  color: #666;
+  display: block;
+  padding: 1rem;
+}
+
+#nav .parent-menu .parent-menu-item .parent-menu-item-link:hover {
+  background: rgba(84, 130, 53, 0.2);
+}
+
+#nav .parent-menu .parent-menu-item .parent-menu-item-link.active {
+  background: rgba(84, 130, 53, 0.2);
+}
+
+#nav .child-menu {
+  list-style: none;
+}
+
+#nav .child-menu .child-menu-item .child-menu-item-link {
+  color: #666;
+  display: block;
+  padding: 1rem 3rem;
+}
+
+#nav .child-menu .child-menu-item .child-menu-item-link:hover, #nav .child-menu .child-menu-item .child-menu-item-link.active {
+  background: rgba(84, 130, 53, 0.2);
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in {
+    position: static;
+    width: 100%;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in:before {
+    display: none;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in #hamburger {
+    display: none;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .parent-menu {
+    background: none;
+    border: none;
+    bottom: 15%;
+    position: absolute;
+    right: 2.5%;
+  }
+}
+
+@media print, screen and (min-width: 1201px) {
+  #nav.vp-in .parent-menu {
+    bottom: 20%;
+    right: 6%;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .parent-menu.menu-hidden {
+    display: block;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .parent-menu .parent-menu-item {
+    border-bottom: none;
+    display: inline-block;
+    position: relative;
+    margin-right: 1.5rem;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .parent-menu .parent-menu-item:hover > ul.child-menu {
+    display: block;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .parent-menu .parent-menu-item:hover > a.parent-menu-item-link {
+    background: none;
+    color: #fff;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .parent-menu .parent-menu-item.has-children i {
+    color: inherit;
+    margin-left: 0.5rem;
+    margin-top: 0.2rem;
+    padding-right: 0;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .parent-menu .parent-menu-item .parent-menu-item-link {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.3rem;
+    padding: 0;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .parent-menu .parent-menu-item .parent-menu-item-link.active {
+    background: none;
+    color: #fff;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .child-menu {
+    border: 0.1rem solid rgba(136, 136, 136, 0.3);
+    border-radius: 0.2rem;
+    display: none;
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .child-menu:before {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), url(/img/barnwood.jpg) no-repeat center/cover;
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/img/barnwood.jpg) no-repeat center/cover;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/img/barnwood.jpg) no-repeat center/cover;
+    content: '';
+    display: block;
+    height: 100%;
+    opacity: 0.9;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .child-menu .child-menu-item {
+    border-bottom: 0.1rem solid rgba(136, 136, 136, 0.3);
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .child-menu .child-menu-item:last-child {
+    border-bottom: none;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #nav.vp-in .child-menu .child-menu-item .child-menu-item-link {
+    padding: 1rem;
+  }
+}
+
+@media print, screen and (min-width: 1201px) {
+  #nav.vp-out {
+    left: 50%;
+    max-width: 140rem;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+body.adminbar-on #nav {
+  top: 4.7rem;
+}
+
+@media print, screen and (min-width: 783px) {
+  body.adminbar-on #nav {
+    top: 3.3rem;
+  }
+}
+
+body.adminbar-on #nav #hamburger {
+  right: 0.9rem;
+}
+
+@media print, screen and (min-width: 783px) {
+  body.adminbar-on #nav #hamburger {
+    right: 0.5rem;
+  }
+}
+
+@media print, screen and (min-width: 1201px) {
+  body.adminbar-on #nav #hamburger {
+    right: 0;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  body.adminbar-on #nav.vp-in {
+    position: static;
+    width: 100%;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  body.adminbar-on #nav.vp-in:before {
+    display: none;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  body.adminbar-on #nav.vp-in #hamburger {
+    display: none;
+  }
+}
+
+@media print, screen and (min-width: 1201px) {
+  body.adminbar-on #nav.vp-out {
+    left: 50%;
+    max-width: 140rem;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
+/* page styling */
+#page-content {
+  min-height: 70rem;
+  padding: 2rem 2rem 4rem 2rem;
+}
+
+@media print, screen and (min-width: 501px) {
+  #page-content {
+    padding: 2rem 5rem 6rem 5rem;
+  }
+}
+
+@media print, screen and (min-width: 1201px) {
+  #page-content {
+    margin: 2rem 3rem 0rem 3rem;
+  }
+}
+
+#page-content img.home {
+  display: block;
+  margin: 1rem 0 0 -1rem;
+  min-width: 26rem;
+  max-width: 29rem;
+  width: 40%;
+}
+
+@media print, screen and (min-width: 783px) {
+  #page-content img.home {
+    float: right;
+    margin: 1rem 0 0 2rem;
+  }
+}
+
+#page-content h2 {
+  margin-top: 3rem;
+}
+
+#page-content h2 + p {
+  margin-top: 0.5rem;
+}
+
+#page-content h1 + h2 {
+  margin-top: 2rem;
+}
+
+#page-content h1 + img.home + h2 {
+  margin-top: 1rem;
+}
+
+@media print, screen and (min-width: 783px) {
+  #page-content h1 + img.home + h2 {
+    margin-top: 2rem;
+  }
+}
+
+#page-content p {
+  color: #444;
+  line-height: 1.6;
+  margin-top: 1.5rem;
+}
+
+#page-content ul {
+  list-style: none;
+}
+
+#page-content ul li {
+  padding-left: 2.7rem;
+  line-height: 1.6;
+  margin: 3rem 0 0 0;
+  padding-top: 0.6rem;
+  position: relative;
+}
+
+@media print, screen and (min-width: 501px) {
+  #page-content ul li {
+    padding-left: 3.3rem;
+  }
+}
+
+#page-content ul li:before {
+  color: #548235;
+  content: '\f299';
+  font-family: 'Font Awesome 5 Brands';
+  font-size: 2.5rem;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+#page-content ul.services li {
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 1rem 0 0 0;
+  padding-left: 2rem;
+  padding-top: 0.1rem;
+}
+
+#page-content ul.services li em {
+  font-size: 1.6rem;
+}
+
+#page-content ul.services li:before {
+  content: '\f105';
+  font-family: 'Font Awesome 5 Free';
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+#page-content .disclaimer {
+  border-top: 0.1rem solid rgba(84, 130, 53, 0.4);
+  font-size: 1.2rem;
+  margin-top: 5rem;
+  padding-top: 1rem;
+}
+
+#page-content .disclaimer em {
+  font-size: inherit;
+}
+
+#page-content .about-name {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 2rem;
+}
+
+@media print, screen and (min-width: 783px) {
+  #page-content .about-name {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+#page-content .about-name h2 {
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+@media print, screen and (min-width: 501px) {
+  #page-content .about-name h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #page-content .about-name h2 {
+    margin: 0;
+  }
+}
+
+#page-content .about-bio {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 4rem;
+}
+
+@media print, screen and (min-width: 783px) {
+  #page-content .about-bio {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+#page-content .about-bio img {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 15rem;
+}
+
+#page-content .about-bio ul {
+  margin-left: 0;
+}
+
+@media print, screen and (min-width: 783px) {
+  #page-content .about-bio ul {
+    margin-left: 2rem;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #page-content .about-bio ul li:first-child {
+    margin-top: 0;
+  }
+}
+
+#page-content #grid {
+  font-family: "Roboto Condensed", sans-serif;
+  margin-top: 2rem;
+}
+
+#page-content #grid .block {
+  border-bottom: 0.1rem solid rgba(136, 136, 136, 0.3);
+  padding-bottom: 2rem;
+}
+
+#page-content #grid .block:last-child {
+  border-bottom: none;
+}
+
+#page-content #grid .block .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0 0 1rem;
+  overflow: hidden;
+}
+
+#page-content #grid .block .row:first-child {
+  margin-top: 2rem;
+}
+
+#page-content #grid .block .row > div:first-child {
+  width: 40%;
+}
+
+@media print, screen and (min-width: 501px) {
+  #page-content #grid .block .row > div:first-child {
+    width: 30%;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #page-content #grid .block .row > div:first-child {
+    width: 20%;
+  }
+}
+
+@media print, screen and (min-width: 1201px) {
+  #page-content #grid .block .row > div:first-child {
+    width: 15%;
+  }
+}
+
+#page-content #grid .block .row > div:last-child {
+  width: 60%;
+}
+
+@media print, screen and (min-width: 501px) {
+  #page-content #grid .block .row > div:last-child {
+    width: 70%;
+  }
+}
+
+@media print, screen and (min-width: 783px) {
+  #page-content #grid .block .row > div:last-child {
+    width: 80%;
+  }
+}
+
+@media print, screen and (min-width: 1201px) {
+  #page-content #grid .block .row > div:last-child {
+    width: 85%;
+  }
+}
+
+#page-content #grid .block .row > div a {
+  color: #548235;
+  text-decoration: underline;
+}
+
+#page-content .health-strategies-wrapper {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+@media print, screen and (min-width: 960px) {
+  #page-content .health-strategies-wrapper {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+#page-content .health-strategies-wrapper .health-strategies-image {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-image .image-wrapper {
+  -webkit-animation: health-strategies-glow 3s infinite;
+          animation: health-strategies-glow 3s infinite;
+  background: url("/img/health_strategies.png") top left/contain no-repeat;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-image .image-wrapper img {
+  display: block;
+  visibility: hidden;
+  width: 100%;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-image #vitality-content {
+  left: 24%;
+  opacity: 0;
+  position: absolute;
+  top: 46%;
+  visibility: hidden;
+  width: 20%;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-image #hotspot-nutrition {
+  cursor: pointer;
+  height: 23%;
+  left: 62%;
+  position: absolute;
+  top: 1.5%;
+  width: 11%;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-image #hotspot-lifestyle {
+  cursor: pointer;
+  height: 23.39%;
+  left: 75.5%;
+  position: absolute;
+  top: 33.5%;
+  width: 11%;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-image #hotspot-movement {
+  cursor: pointer;
+  height: 14.4%;
+  left: 59%;
+  position: absolute;
+  top: 72.9%;
+  width: 18.5%;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-image #hotspot-vitality {
+  cursor: pointer;
+  height: 14.5%;
+  left: 13.2%;
+  position: absolute;
+  top: 83.3%;
+  width: 33.5%;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-content {
+  position: relative;
+}
+
+@media print, screen and (min-width: 960px) {
+  #page-content .health-strategies-wrapper .health-strategies-content {
+    margin-left: 3rem;
+  }
+}
+
+#page-content .health-strategies-wrapper .health-strategies-content #where:after {
+  content: 'above';
+}
+
+@media print, screen and (min-width: 960px) {
+  #page-content .health-strategies-wrapper .health-strategies-content #where:after {
+    content: 'to the left';
+  }
+}
+
+#page-content .health-strategies-wrapper .health-strategies-content #nutrition-content,
+#page-content .health-strategies-wrapper .health-strategies-content #lifestyle-content,
+#page-content .health-strategies-wrapper .health-strategies-content #movement-content {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e8f1d4), color-stop(10%, #fcfff0), to(#e8f1d4));
+  background: -o-linear-gradient(top, #e8f1d4, #fcfff0 10% 90%, #e8f1d4);
+  background: linear-gradient(to bottom, #e8f1d4, #fcfff0 10% 90%, #e8f1d4);
+  border: 0.1rem solid #548235;
+  opacity: 0;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  width: 100%;
+  z-index: 2;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-content #nutrition-content h2,
+#page-content .health-strategies-wrapper .health-strategies-content #lifestyle-content h2,
+#page-content .health-strategies-wrapper .health-strategies-content #movement-content h2 {
+  margin-top: 0;
+  margin-bottom: -0.5rem;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-content #nutrition-content p,
+#page-content .health-strategies-wrapper .health-strategies-content #lifestyle-content p,
+#page-content .health-strategies-wrapper .health-strategies-content #movement-content p {
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-content #nutrition-content p em,
+#page-content .health-strategies-wrapper .health-strategies-content #lifestyle-content p em,
+#page-content .health-strategies-wrapper .health-strategies-content #movement-content p em {
+  font-size: inherit;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-content #nutrition-content p .go-link,
+#page-content .health-strategies-wrapper .health-strategies-content #lifestyle-content p .go-link,
+#page-content .health-strategies-wrapper .health-strategies-content #movement-content p .go-link {
+  border-bottom: 0.1rem solid #40910a;
+  color: #40910a;
+  display: block;
+  float: right;
+  font-family: "Roboto Condensed", sans-serif;
+  font-style: normal;
+  line-height: 1;
+  padding-top: 0.3rem;
+}
+
+#page-content .health-strategies-wrapper .health-strategies-content #nutrition-content #exit,
+#page-content .health-strategies-wrapper .health-strategies-content #lifestyle-content #exit,
+#page-content .health-strategies-wrapper .health-strategies-content #movement-content #exit {
+  color: rgba(84, 130, 53, 0.7);
+  cursor: pointer;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.2rem;
+}
+
+#page-content .trail-map {
+  margin: 3rem 0;
+  position: relative;
+  width: 100%;
+}
+
+#page-content .trail-map img {
+  display: block;
+  width: 100%;
+}
+
+#page-content .trail-map #marker-nutrition,
+#page-content .trail-map #marker-lifestyle,
+#page-content .trail-map #marker-movement {
+  cursor: pointer;
+  height: 7.16%;
+  position: absolute;
+  width: 3.10%;
+}
+
+#page-content .trail-map #marker-nutrition a,
+#page-content .trail-map #marker-lifestyle a,
+#page-content .trail-map #marker-movement a {
+  background: url("/img/marker.png") top left/100% 100% no-repeat;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#page-content .trail-map #marker-nutrition {
+  left: 8.26%;
+  top: 74.96%;
+}
+
+#page-content .trail-map #marker-lifestyle {
+  left: 75.89%;
+  top: 49.18%;
+}
+
+#page-content .trail-map #marker-movement {
+  left: 45.54%;
+  top: 29.51%;
+}
+
+#form {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(242, 242, 242, 0.7)), to(rgba(242, 242, 242, 0.7))), url(/img/barnwood.jpg) no-repeat center/cover;
+  background: -o-linear-gradient(top, rgba(242, 242, 242, 0.7), rgba(242, 242, 242, 0.7)), url(/img/barnwood.jpg) no-repeat center/cover;
+  background: linear-gradient(to bottom, rgba(242, 242, 242, 0.7), rgba(242, 242, 242, 0.7)), url(/img/barnwood.jpg) no-repeat center/cover;
+  border: 0.1rem solid rgba(136, 136, 136, 0.3);
+  border-radius: 0.3rem;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #444;
+  margin-top: 3rem;
+  max-width: 400px;
+  padding: 0 1rem 2rem 1rem;
+  width: 100%;
+}
+
+#form #errors {
+  border: 0.1rem solid #f00;
+  color: #f00;
+  list-style: none;
+  padding: 1rem;
+}
+
+#form #errors li {
+  line-height: 1.2;
+  margin: 0;
+  padding: 0 0 0 1rem;
+  position: static;
+}
+
+#form #errors li:first-child {
+  padding: 0;
+}
+
+#form #errors li:before {
+  content: '';
+}
+
+#form .form-group {
+  margin-top: 2rem;
+}
+
+#form .form-group .required {
+  color: #548235;
+}
+
+#form .form-group label {
+  display: block;
+}
+
+#form .form-group input[type=text],
+#form .form-group textarea {
+  background: rgba(255, 255, 255, 0.7);
+  border: 0.1rem solid rgba(136, 136, 136, 0.5);
+  border-radius: 0.3rem;
+  color: inherit;
+  font: inherit;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+#form .form-group input[type=text]:focus,
+#form .form-group textarea:focus {
+  border: 0.1rem solid #548235;
+}
+
+#form .form-group textarea {
+  resize: none;
+  height: 10rem;
+}
+
+#form .form-group .rb-label {
+  border: 0.1rem solid transparent;
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.1rem;
+}
+
+#form .form-group .rb-label:focus {
+  border: 0.1rem dashed #548235;
+}
+
+#form .form-group .rb-label .rb-span {
+  border: 0.1rem solid rgba(136, 136, 136, 0.6);
+  border-radius: 50%;
+  display: inline-block;
+  height: 1.7rem;
+  margin-right: 0.5rem;
+  padding: 0.3rem;
+  width: 1.7rem;
+}
+
+#form .form-group .rb-label .rb-span i {
+  display: block;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+
+#form .form-group input[type=radio] {
+  display: none;
+}
+
+#form .form-group input[type=radio]:checked + label.rb-label span.rb-span i {
+  background: rgba(84, 130, 53, 0.5);
+}
+
+/* footer styling */
+@media print, screen and (min-width: 1201px) {
+  #footer {
+    margin: 0 3rem;
+  }
+}
+
+#footer .footer-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+@media print, screen and (min-width: 783px) {
+  #footer .footer-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+#footer .footer-wrapper:before {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(84, 130, 53, 0.2)), to(rgba(84, 130, 53, 0.2))), url(/img/barnwood.jpg) no-repeat center center/cover;
+  background: -o-linear-gradient(top, rgba(84, 130, 53, 0.2), rgba(84, 130, 53, 0.2)), url(/img/barnwood.jpg) no-repeat center center/cover;
+  background: linear-gradient(to bottom, rgba(84, 130, 53, 0.2), rgba(84, 130, 53, 0.2)), url(/img/barnwood.jpg) no-repeat center center/cover;
+  content: '';
+  display: block;
+  height: 100%;
+  opacity: 0.6;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+#footer .col {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 0.1rem solid rgba(84, 130, 53, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 2rem;
+}
+
+@media print, screen and (min-width: 783px) {
+  #footer .col {
+    border-bottom: none;
+    border-right: 0.1rem solid rgba(84, 130, 53, 0.4);
+    margin: 2rem 0;
+  }
+}
+
+#footer .col:last-child {
+  border-bottom: none;
+}
+
+@media print, screen and (min-width: 783px) {
+  #footer .col:last-child {
+    border-right: none;
+  }
+}
+
+#footer .col pre {
+  color: #666;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+  padding: 2rem 0;
+  white-space: pre-line;
+}
+
+#footer .col pre:first-line {
+  line-height: 0;
+}
+
+#footer .col pre i {
+  color: rgba(84, 130, 53, 0.6);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+#footer .col pre .email-link {
+  border-bottom: 0.1rem solid transparent;
+  color: #548235;
+  padding-bottom: 0.1rem;
+}
+
+#footer .col pre .email-link:hover {
+  border-bottom: 0.1rem solid #548235;
+}

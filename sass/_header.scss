@@ -1,0 +1,28 @@
+/* header styling */
+#header {
+	background-image: $header_text_small, $header_no_text;
+	background-repeat: no-repeat, no-repeat;
+	background-position: center 73%, 20% 5%;
+	background-size: 28rem, cover;
+	font-family: $font-sans-serif;
+	height: 48.8rem;
+	position: relative;
+	user-select: none;
+	width: 100%;
+	
+	@include atSmall() {
+		background-image: $header_text, $header_no_text;
+		background-position: 15% 71%, 20% 5%;
+		background-size: 45rem, cover;
+	}
+	
+	@include atMedium() {
+		background-position: 15% 69%, 20% 5%;
+		background-size: 53.8rem, cover;
+	}
+	
+	@include atLarge() {
+		background-position: 15% 56%, top center;
+		background-size: 53.8rem, contain;
+	}
+}

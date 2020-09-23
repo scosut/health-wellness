@@ -1,0 +1,38 @@
+$heading-primary:     #548235;
+$heading-secondary:   rgba(#548235, 0.7);
+$emphasis:            #40910a;
+$animation-highlight: rgba(#e8f1d4, 0.3);
+
+$border-primary:     0.1rem solid rgba(#888, 0.3);
+$border-secondary:   0.1rem solid rgba(#548235, 0.4);
+$border-transparent: 0.1rem solid transparent;
+$border-email:       0.1rem solid #548235;
+$border-hamburger:   0.1rem solid #999;
+$border-radio:       0.1rem dashed #548235;
+$border-go-link:     0.1rem solid #40910a;
+
+$text-body:      #444;
+$text-footer:    #666;
+$text-menu-icon: #999;
+$link-active:    #fff;
+$border-color:   #888;
+$img-folder:     "/img/";
+
+$menu-background:   linear-gradient(to bottom, rgba(#fff, 0.5), rgba(#fff, 0.5)), url(#{$img-folder}barnwood.jpg) no-repeat center/cover;
+
+$footer-background: linear-gradient(to bottom, rgba(#548235, 0.2), rgba(#548235, 0.2)), url(#{$img-folder}barnwood.jpg) no-repeat center center/cover;
+
+$form-background:   linear-gradient(to bottom, rgba(#f2f2f2, 0.7), rgba(#f2f2f2, 0.7)), url(#{$img-folder}barnwood.jpg) no-repeat center/cover;
+
+$popup-background: linear-gradient(to bottom, #e8f1d4, #fcfff0 10% 90%, #e8f1d4);
+
+$header-text-small: url("#{$img-folder}header_text_small.png");
+$header-text:       url("#{$img-folder}header_text.png");
+$header-no-text:    url("#{$img-folder}header_no_text.jpg");
+
+$font-sans-serif: 'Roboto Condensed', sans-serif;
+$font-serif:      'Roboto Slab', serif;
+
+$width-small:   501px;
+$width-medium:  783px;
+$width-large:  1201px;

@@ -1,0 +1,84 @@
+/* footer styling */
+#footer {
+	@include atLarge() {
+		margin: 0 3rem;
+	}
+	
+	.footer-wrapper {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		width: 100%;
+		z-index: 1;
+		
+		@include atMedium() {
+			flex-direction: row;
+		}
+		
+		&:before {
+			background: $footer-background;
+			content: '';
+			display: block;
+			height: 100%;
+			opacity: 0.6;
+			position: absolute;
+			width: 100%;
+			z-index: -1;		
+		}
+	}
+	
+	.col {
+		align-items: center;
+		border-bottom: $border-secondary;
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		margin: 0 2rem;
+		
+		@include atMedium() {
+			border-bottom: none;
+			border-right: $border-secondary;
+			margin: 2rem 0;
+		}
+		
+		&:last-child {
+			border-bottom: none;
+			
+			@include atMedium() {
+				border-right: none;
+			}
+		}
+		
+		pre {
+			color: $text-footer;
+			font-family: $font-sans-serif;
+			font-size: 1.5rem;
+			line-height: 1.4;			
+			margin: 1rem 0;
+			padding: 2rem 0;
+			white-space: pre-line;
+			
+			&:first-line {
+				line-height: 0;
+			}
+			
+			i {
+				color: rgba($heading-primary, 0.6);
+				font-size: 3rem;
+				margin-bottom: 1.5rem;
+				text-align: center;
+				width: 100%;
+			}
+			
+			.email-link {
+				border-bottom: $border-transparent;
+				color: $heading-primary;
+				padding-bottom: 0.1rem;
+				
+				&:hover {
+					border-bottom: $border-email;
+				}
+			}
+		}
+	}
+}

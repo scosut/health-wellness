@@ -1,0 +1,278 @@
+/* navigation styling */
+#nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+	
+	&:before {
+		background: $menu-background;
+		content: '';
+		display: block;
+		height: 100%;
+		opacity: 0.9;
+		position: absolute;
+		width: 100%;
+		z-index: -1;		
+	}
+		
+	#hamburger {
+		background: rgba($link-active, 0.8);
+		border: $border-hamburger;
+		border-radius: 0.3rem;
+		color: $text-menu-icon;
+		cursor: pointer;
+		display: block;
+		margin-bottom: 0.3rem;
+		padding: 0.5rem;
+		position: absolute;
+		right: 0.5rem;
+		top: 0.1rem;
+		height: 2.8rem;
+		width: 2.8rem;
+		text-align: center;
+    
+		&.exit {
+			background: none;
+			border: $border-transparent;
+		}
+	}
+	
+	.parent-menu {
+		border: $border-primary;
+		border-radius: 0.2rem;
+		list-style: none;
+		
+		.parent-menu-item {
+			border-bottom: $border-primary;
+			
+			&:last-child {
+				border-bottom: none;
+				margin-right: 0;			
+			}
+			
+			&.has-children i {
+				color: $text-menu-icon;
+				float: right;
+				padding-right: 0.5rem;
+			}
+			
+			.parent-menu-item-link {
+				color: $text-footer;
+				display: block;
+				padding: 1rem;
+				
+				&:hover {
+					background: rgba($heading-primary, 0.2);
+				}
+				
+				&.active {
+					background: rgba($heading-primary, 0.2);
+				}
+			}
+		}
+	}
+	
+	.child-menu {
+		list-style: none;
+		
+		.child-menu-item {
+			.child-menu-item-link {
+				color: $text-footer;
+				display: block;
+				padding: 1rem 3rem;
+				
+				&:hover,
+				&.active {
+					background: rgba($heading-primary, 0.2);
+				}
+			}
+		}
+	}
+	
+	&.vp-in {		
+		@include atMedium() {
+			position: static;
+			width: 100%;
+		}
+		
+		&:before {
+			@include atMedium() {
+				display: none;
+			}
+		}
+		
+		#hamburger {
+			@include atMedium() {
+				display: none;
+			}
+		}
+		
+		.parent-menu {
+			@include atMedium() {
+				background: none;
+				border: none;
+				bottom: 15%;
+				position: absolute;
+				right: 2.5%;
+			}
+			
+			@include atLarge() {
+				bottom: 20%;
+				right: 6%;
+			}
+			
+			&.menu-hidden {
+				@include atMedium() {
+					display: block;
+				}
+			}
+			
+			.parent-menu-item {
+				@include atMedium() {
+					border-bottom: none;
+					display: inline-block;
+					position: relative;
+					margin-right: 1.5rem;
+				}
+				
+				&:hover > {
+					ul.child-menu {
+						@include atMedium() {
+							display: block;
+						}
+					}
+					
+					a.parent-menu-item-link {
+						@include atMedium() {
+							background: none;
+							color: $link-active;
+						}
+					}
+				}
+				
+				&.has-children i {
+					@include atMedium() {
+						color: inherit;
+						margin-left: 0.5rem;
+						margin-top: 0.2rem;
+						padding-right: 0;
+					}
+				}
+				
+				.parent-menu-item-link {
+					@include atMedium() {
+						color: rgba($link-active, 0.8);
+						margin-bottom: 0.3rem;
+						padding: 0;	
+					}
+					
+					&.active {
+						@include atMedium() {
+							background: none;
+							color: $link-active;
+						}
+					}
+				}
+			}
+		}
+		
+		.child-menu {
+			@include atMedium() {
+				border: $border-primary;
+				border-radius: 0.2rem;
+				display: none;
+				list-style: none;
+				position: absolute;
+				width: 100%;
+				z-index: 10;	
+			}
+
+			&:before {
+				@include atMedium() {
+					background: $menu-background;
+					content: '';
+					display: block;
+					height: 100%;
+					opacity: 0.9;
+					position: absolute;
+					width: 100%;
+					z-index: -1;
+				}
+			}
+
+			.child-menu-item {
+				@include atMedium() {
+					border-bottom: $border-primary;
+				}
+
+				&:last-child {
+					@include atMedium() {
+						border-bottom: none;
+					}
+				}
+
+				.child-menu-item-link {
+					@include atMedium() {
+						padding: 1rem;
+					}
+				}
+			}
+		}
+	}
+	
+	&.vp-out {
+		@include atLarge() {
+			left: 50%;
+			max-width: 140rem;
+			transform: translateX(-50%);
+		}
+	}
+}
+
+body.adminbar-on #nav {
+  top: 4.7rem;
+  
+  @include atMedium() {
+		top: 3.3rem;
+	}
+  
+  #hamburger {
+		right: 0.9rem;
+    
+    @include atMedium() {
+      right: 0.5rem;
+    }
+    
+    @include atLarge() {
+      right: 0;
+    }
+  }
+  
+  &.vp-in {		
+		@include atMedium() {
+			position: static;
+			width: 100%;
+		}
+		
+		&:before {
+			@include atMedium() {
+				display: none;
+			}
+		}
+		
+		#hamburger {
+			@include atMedium() {
+				display: none;
+			}
+		}
+  }
+  
+  &.vp-out {
+		@include atLarge() {
+			left: 50%;
+			max-width: 140rem;
+			transform: translateX(-50%);
+		}
+	}
+}

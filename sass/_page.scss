@@ -1,0 +1,414 @@
+/* page styling */
+#page-content {
+	min-height: 70rem;
+	padding: 2rem 2rem 4rem 2rem;
+	
+	@include atSmall() {
+		padding: 2rem 5rem 6rem 5rem;
+	}
+	
+	@include atLarge() {
+		margin: 2rem 3rem 0rem 3rem;
+	}
+	
+	img.home {
+		display: block;
+		margin: 1rem 0 0 -1rem;
+		min-width: 26rem;
+		max-width: 29rem;
+		width: 40%;
+		
+		@include atMedium() {
+			float: right;
+			margin: 1rem 0 0 2rem;
+		}
+	}
+	
+	h2 {
+		margin-top: 3rem;
+		
+		+ p {
+			margin-top: 0.5rem;
+		}
+	}
+	
+	h1 + h2 {
+		margin-top: 2rem;
+	}
+	
+	h1 + img.home + h2 {
+		margin-top: 1rem;	
+		
+		@include atMedium() {
+			margin-top: 2rem;	
+		}
+	}
+	
+	p {
+		color: $text-body;
+		line-height: 1.6;
+		margin-top: 1.5rem;	
+	}
+	
+	ul {
+		list-style: none;
+		
+		li {
+			padding-left: 2.7rem;
+			line-height: 1.6;
+			margin: 3rem 0 0 0;
+			padding-top: 0.6rem;
+			position: relative;
+			
+			@include atSmall() {
+				padding-left: 3.3rem;		
+			}
+			
+			&:before {
+				color: $heading-primary;
+				content: '\f299';
+				font-family: 'Font Awesome 5 Brands';
+				font-size: 2.5rem;
+				left: 0;
+				position: absolute;
+				top: 0;	
+			}
+		}
+		
+		&.services {
+			li {
+				font-size: 1.5rem;
+				line-height: 1.2;
+				margin: 1rem 0 0 0;
+				padding-left: 2rem;
+				padding-top: 0.1rem;
+				
+				em {
+					font-size: 1.6rem;
+				}
+				
+				&:before {
+					content: '\f105';
+					font-family: 'Font Awesome 5 Free';
+					font-size: 1.5rem;
+					font-weight: 900;
+				}
+			}
+		}
+	}	
+	
+	.disclaimer {
+		border-top: $border-secondary;
+		font-size: 1.2rem;
+		margin-top: 5rem;
+		padding-top: 1rem;
+		
+		em {
+			font-size: inherit;
+		}
+	}
+	
+	.about-name {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		margin-top: 2rem;
+		
+		@include atMedium() {
+			flex-direction: row;
+		}
+		
+		h2 {
+			font-size: 2rem;
+			margin: 0.5rem;
+			
+			@include atSmall() {
+				font-size: 2.5rem;
+			}
+			
+			@include atMedium() {
+				margin: 0;
+			}
+		}
+	}
+	
+	.about-bio {
+		align-items: center;
+    display: flex;
+		flex-direction: column;
+		margin-top: 4rem;
+		
+		@include atMedium {
+			align-items: flex-start;
+			flex-direction: row;	
+		}
+		
+		img {
+      flex-shrink: 0;
+			width: 15rem;
+		}
+		
+		ul {
+			margin-left: 0;
+			
+			@include atMedium() {
+				margin-left: 2rem;
+			}
+			
+			li {
+				&:first-child {
+					@include atMedium() {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+	}
+	
+	#grid {
+		font-family: $font-sans-serif;
+		margin-top: 2rem;
+		
+		.block {
+			border-bottom: $border-primary;
+			padding-bottom: 2rem;
+			
+			&:last-child {
+				border-bottom: none;
+			}
+		
+			.row {				
+				display: flex;
+				margin: 1rem 0 0 1rem;
+				overflow: hidden;
+				
+				&:first-child {
+					margin-top: 2rem;
+				}
+
+				> div {
+					&:first-child {
+						width: 40%;
+
+						@include atSmall() {
+							width: 30%;
+						}
+
+						@include atMedium() {
+							width: 20%;
+						}
+
+						@include atLarge() {
+							width: 15%;
+						}
+					}
+
+					&:last-child {
+						width: 60%;
+
+						@include atSmall() {
+							width: 70%;
+						}
+
+						@include atMedium() {
+							width: 80%;
+						}
+
+						@include atLarge() {
+							width: 85%;
+						}
+					}
+					
+					a {
+						color: $heading-primary;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+	
+	.health-strategies-wrapper {
+		align-items: center; 
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		
+		@include atCustom(960px) {
+			align-items: flex-start;
+			flex-direction: row;
+		}
+		
+		.health-strategies-image {
+			flex-shrink: 0;
+			position: relative;
+			
+			.image-wrapper {
+				animation: health-strategies-glow 3s infinite;
+				background: url("/img/health_strategies.png") top left/contain no-repeat;
+				
+				img {
+					display: block;
+					visibility: hidden;
+					width: 100%;
+				}
+			}
+			
+			#vitality-content {
+				left: 24%;
+				opacity: 0;			
+				position: absolute;
+				top: 46%;
+				visibility: hidden;
+				width: 20%;	
+			}			
+					
+			#hotspot-nutrition {
+				cursor: pointer;
+				height: 23%;
+				left: 62%;
+				position: absolute;
+				top: 1.5%;
+				width: 11%;
+			}
+			
+			#hotspot-lifestyle {
+				cursor: pointer;
+				height: 23.39%;
+				left: 75.5%;
+				position: absolute;
+				top: 33.5%;
+				width: 11%;
+			}
+			
+			#hotspot-movement {
+				cursor: pointer;
+				height: 14.4%;
+				left: 59%;
+				position: absolute;
+				top: 72.9%;
+				width: 18.5%;
+			}
+			
+			#hotspot-vitality {
+				cursor: pointer;
+				height: 14.5%;
+				left: 13.2%;
+				position: absolute;
+				top: 83.3%;
+				width: 33.5%;
+			}
+		}
+		
+		.health-strategies-content {
+			position: relative;
+			
+			@include atCustom(960px) {
+				margin-left: 3rem;
+			}
+			
+			#where:after {
+				content: 'above';
+				
+				@include atCustom(960px) {
+					content: 'to the left';
+				}
+			}
+			
+			#nutrition-content,
+			#lifestyle-content,
+			#movement-content {
+				background: $popup-background;
+				border: $border-email;
+				opacity: 0;
+				padding: 1rem;
+				position: absolute;
+				top: 0;
+				left: 0;
+				visibility: hidden;
+				width: 100%;
+				z-index: 2;
+				
+				h2 {
+					margin-top: 0;
+					margin-bottom: -0.5rem;
+				}
+				
+				p {
+					font-size: 1.4rem;
+					margin-top: 1rem;
+					
+					em {
+						font-size: inherit;
+					}
+					
+					.go-link {
+						border-bottom: $border-go-link;
+						color: $emphasis;
+						display: block;
+						float: right;
+						font-family: $font-sans-serif;
+						font-style: normal;
+						line-height: 1;
+						padding-top: 0.3rem;
+					}
+				}
+			}
+			
+			#nutrition-content #exit,
+			#lifestyle-content #exit,
+			#movement-content #exit {
+				color: $heading-secondary;
+				cursor: pointer;
+				position: absolute;
+				right: 0.5rem;
+				top: 0.2rem;
+			}
+		}			
+	}
+	
+	.trail-map {
+		margin: 3rem 0;
+		position: relative;
+		width: 100%;
+		
+		img {
+			display: block;
+			width: 100%;
+		}
+		
+		#marker-nutrition,
+		#marker-lifestyle,
+		#marker-movement {
+			cursor: pointer;
+			height: 7.16%;
+			position: absolute;
+			width: 3.10%;
+			
+			a {
+				background: url("/img/marker.png") top left/100% 100% no-repeat;
+				display: block;
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100%;
+			}
+		}
+		
+		#marker-nutrition {			
+			left: 8.26%;
+			top: 74.96%;
+		}
+		
+		#marker-lifestyle {
+			left: 75.89%;
+			top: 49.18%;
+		}
+		
+		#marker-movement {
+			left: 45.54%;
+			top: 29.51%;
+		}		
+	}
+}
