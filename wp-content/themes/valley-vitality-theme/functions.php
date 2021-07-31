@@ -74,10 +74,10 @@ function contact_us_handler() {
 		update_field($field, $value, $contact_id);
 	}
 	
-	$host = "";
-	$user = "";
-	$pass = "";
-	$port = "";
+	$host = "ssl://hgws25.win.hostgator.com";
+	$user = "me@projectsbyscott.com";
+	$pass = "5Z@wt1q2";
+	$port = "465";
 	
 	$to   = "me@projectsbyscott.com";
 	$from = "me@projectsbyscott.com";

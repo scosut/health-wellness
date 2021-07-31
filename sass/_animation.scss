@@ -46,31 +46,28 @@
 	}
 }
 
-@keyframes pulse-marker {
-	0% {
-		background-image: url("/img/marker.png");
-		transform: scale(1);
-	}
-	50% {
-		background-image: url("/img/marker_glow.png");
-		transform: scale(1.15);
-	}
-	100% {
-		background-image: url("/img/marker.png");
-		transform: scale(1);
-	}
+@keyframes glow-flicker {
+  0% { 
+    opacity: 0; 
+  }
+  50%  {
+    opacity: 1; 
+  }
+  100% { 
+    opacity: 0; 
+  }
 }
 
-@keyframes health-strategies-glow {
-	0% {
-		background-image: url("/img/health_strategies.png");
-	}
-	50% {
-		background-image: url("/img/health_strategies_glow.png");
-	}
-	100% {
-		background-image: url("/img/health_strategies.png");
-	}
+@keyframes pulse-marker {
+  0% { 
+    opacity: 0;
+  }
+  50%  {
+    opacity: 1; 
+  }
+  100% { 
+    opacity: 0; 
+  }
 }
 
 .fadeIn {

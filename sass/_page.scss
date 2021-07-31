@@ -241,18 +241,22 @@
 		
 		.health-strategies-image {
 			flex-shrink: 0;
-			position: relative;
+			position: relative;      
 			
 			.image-wrapper {
-				animation: health-strategies-glow 3s infinite;
-				background: url("/img/health_strategies.png") top left/contain no-repeat;
-				
 				img {
 					display: block;
-					visibility: hidden;
 					width: 100%;
-				}
-			}
+
+          &:last-child {
+            animation: glow-flicker 3s infinite;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+          }
+				}        
+			}    
 			
 			#vitality-content {
 				left: 24%;
@@ -372,10 +376,20 @@
 		position: relative;
 		width: 100%;
 		
-		img {
-			display: block;
-			width: 100%;
-		}
+		.image-wrapper {
+      img {
+        display: block;
+        width: 100%;
+
+        &:last-child {
+          animation: glow-flicker 3s infinite;
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+        }
+      }        
+    }
 		
 		#marker-nutrition,
 		#marker-lifestyle,
@@ -386,13 +400,12 @@
 			width: 3.10%;
 			
 			a {
-				background: url("/img/marker.png") top left/100% 100% no-repeat;
 				display: block;
 				height: 100%;
 				left: 0;
 				position: absolute;
 				top: 0;
-				width: 100%;
+				width: 100%;       
 			}
 		}
 		
