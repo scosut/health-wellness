@@ -239,6 +239,10 @@
     var vitality_content = document.getElementById("vitality-content");
     var cons = [nutrition_content, lifestyle_content, movement_content, vitality_content];
 
+    if (bdy) {
+      bdy.className += bdy.className.length > 0 ? " fadeIn" : "fadeIn";
+    }
+
     btn.addEventListener("click", toggleNav.bind(this, par, "parent"));
     par.className += " menu-visible";
     toggleNav(par, "parent");
@@ -279,12 +283,6 @@
 
     if (vitality_hotspot) {
       vitality_hotspot.addEventListener("click", displayContent.bind(this, vitality_hotspot, vitality_content, cons));
-    }
-
-    if (bdy) {
-      bdy.style.opacity = 0;
-      bdy.style.visibility = "hidden";
-      bdy.className += bdy.className.length > 0 ? " fadeIn" : "fadeIn";
     }
   }
 
